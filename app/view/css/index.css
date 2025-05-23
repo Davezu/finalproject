@@ -1,0 +1,263 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#navbar{
+    margin-top: 20px;
+}
+.nav-container {
+    display: flex;
+    align-items: center;
+    padding: 15px 50px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.logo {
+    margin-right: 40px;
+}
+.nav-links {
+    display: flex;
+    flex-grow: 1;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-weight: 500;
+}
+.username {
+    font-weight: 500;
+    margin-left: auto;
+}
+.user-link{
+    text-decoration: none;
+    margin-left: 20px;
+}
+.btn{
+    background-color:#FB0584;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.img-section img {
+    width: 400px;
+    height: auto;
+    max-width: 100%;
+}
+.img-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.welcome-section {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
+.welcome-text {
+    padding-right: 20px;
+}
+.welcome-text h4 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.welcome-text p {
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+.button {
+    background-color: #FB0584;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.img-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img-section img {
+    width: 400px;
+    height: auto;
+    max-width: 100%;
+}
+.row{
+    border-bottom: 1px solid #e0e0e0;
+    margin-top: -30px;
+}
+
+.job-creation-container {
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+.pink-curve-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.pink-curve-container svg {
+    width: 300px;
+    height: 200px;
+    transform: translate(0px, -30px);
+}
+
+.job-creation-image {
+    position: relative;
+    z-index: 2;
+    margin-top: 20px;
+    text-align: center;
+}
+.job-creation-image img {
+    max-width: 100%;
+    height: auto;
+    margin-left: -200px;
+}
+
+.promo-bar {
+    background-color: #F9EBFD;
+    color: #6a276d;
+    text-align: center;
+    padding: 20px 20px;
+    font-size: 14px;
+    font-weight: 100%;
+    border-radius: 16px;
+
+}
+.promo-bar strong {
+    font-weight: 600;
+}
+.h3{
+    text-align: center;
+}
+
+.job-ads-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.job-ads-header h2 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+}
+
+.create-job-ad-btn {
+    background-color: #E60278;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.btn-pink {
+    background-color: #E60278 !important;
+    color: white !important;
+    font-weight: 500 !important;
+    border-radius:12px
+  }
+  
+
+.job-ads-table-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.job-ads-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.job-ads-table thead {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.job-ads-table th {
+    text-align: left;
+    padding: 16px;
+    font-weight: 500;
+    color: #666;
+    font-size: 14px;
+}
+
+.job-ads-table td {
+    padding: 16px;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: middle;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-badge.draft {
+    background-color: #FFF9E6;
+    color: #947100;
+}
+
+.job-info .job-title {
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.job-info .job-location {
+    font-size: 14px;
+    color: #666;
+}
+
+.continue-draft-btn {
+    padding: 8px 16px;
+    border: 1px solid #333;
+    background-color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 500;
+}
+#job-description{
+    resize: none; 
+    min-height: 200px; 
+    width: 100%;
+}
+.btn {
+    background-color: #FB0584;  /* Pink color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.button {
+    background-color: #FB0584;  /* Pink color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
