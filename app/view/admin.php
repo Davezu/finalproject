@@ -4,27 +4,27 @@ $pdo = require_once '../model/database.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['job_id']) && !empty($_POST['job_id'])) {
         //updateCurrent info sa table
-        $stmt = $pdo->prepare("UPDATE js_tbl SET `job-info` = :jobInfo, description = :description, location = :location, salary = :salary WHERE job_id = :jobId");
+        $stmt = $pdo->prepare("UPDATE js_tbl SET `job_info` = :jobInfo, description = :description, location = :location, salary = :salary WHERE job_id = :jobId");
         
         $stmt->execute([
             ':jobId' => $_POST['job_id'],
-            ':jobInfo' => $_POST['job-info'],
+            ':jobInfo' => $_POST['job_info'],
             ':description' => $_POST['description'],
             ':location' => $_POST['location'],
             ':salary' => $_POST['salary']
         ]);
-        header('Location: index.php');
+        header('Location: admin.php');
         exit;
     } else {
         //create
-        $stmt = $pdo->prepare("INSERT INTO js_tbl (`job-info`, description, location, salary) VALUES (:jobInfo, :description, :location, :salary)"); 
+        $stmt = $pdo->prepare("INSERT INTO js_tbl (`job_info`, description, location, salary) VALUES (:jobInfo, :description, :location, :salary)"); 
         $stmt->execute([
-            ':jobInfo' => $_POST['job-info'],
+            ':jobInfo' => $_POST['job_info'],
             ':description' => $_POST['description'],
             ':location' => $_POST['location'],
             ':salary' => $_POST['salary']
         ]);
-        header('Location: index.php');
+        header('Location: admin.php');
         exit;
     }
 }
@@ -34,7 +34,7 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
     $stmt = $pdo->prepare("DELETE FROM js_tbl WHERE job_id = :jobId");
     $stmt->execute([':jobId' => $_GET['delete']
 ]);
-    header('Location: index.php');
+    header('Location: admin.php');
     exit;
 }
 
@@ -119,10 +119,10 @@ if ($stmt->rowCount() > 0) {
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                <form id="job-form" method="POST" action="index.php">
+                                <form id="job-form" method="POST" action="admin.php">
                                     <div class="mb-3">
                                         <label for="job-title" class="col-form-label">Job Title:</label>
-                                        <input type="text" class="form-control" id="job-title" name="job-info" required value="<?php echo $editJob ? htmlspecialchars($editJob['job-info']) : ''; ?>">
+                                        <input type="text" class="form-control" id="job-title" name="job_info" required value="<?php echo $editJob ? htmlspecialchars($editJob['job_info']) : ''; ?>">
                                         <input type="hidden" id="job-id" name="job_id" value="<?php echo $editJob ? htmlspecialchars($editJob['job_id']) : ''; ?>">
                                     </div>
                                     <div class="mb-3">
@@ -172,7 +172,7 @@ if ($stmt->rowCount() > 0) {
                             </td>
                             <td>
                                 <div class="job-info">
-                                    <div class="job-title"><?php echo htmlspecialchars($job['job-info']); ?></div>
+                                    <div class="job-title"><?php echo htmlspecialchars($job['job_info']); ?></div>
                                     <div class="job-location"><?php echo htmlspecialchars($job['location']); ?></div>
                                 </div>
                             </td>
@@ -180,8 +180,8 @@ if ($stmt->rowCount() > 0) {
                             <td><?php echo htmlspecialchars($job['location']); ?></td>
                             <td><?php echo htmlspecialchars($job['salary']); ?></td>
                             <td>
-                                <a href="index.php?edit=<?php echo $job['job_id']; ?>" class="btn btn-primary">Edit</a>
-                                <a href="index.php?delete=<?php echo $job['job_id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this job?')">Delete</a>
+                                <a href="admin.php?edit=<?php echo $job['job_id']; ?>" class="btn btn-primary">Edit</a>
+                                <a href="admin.php?delete=<?php echo $job['job_id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this job?')">Delete</a>
                             </td>
                         </tr>
                         <?php endforeach; ?>

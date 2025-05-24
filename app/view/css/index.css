@@ -170,8 +170,7 @@ body {
     color: white !important;
     font-weight: 500 !important;
     border-radius:12px
-  }
-  
+}
 
 .job-ads-table-container {
     background-color: #fff;
@@ -242,7 +241,7 @@ body {
     width: 100%;
 }
 .btn {
-    background-color: #FB0584;  /* Pink color */
+    background-color: #FB0584;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -251,13 +250,65 @@ body {
 }
 
 .button {
-    background-color: #FB0584;  /* Pink color */
+    background-color: #FB0584;
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
+}
+
+.searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+.search-input {
+    flex: 1;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 10px 15px;
+    cursor: text;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #FB0584;
+    box-shadow: 0 0 0 0.2rem rgba(251, 5, 132, 0.25);
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+/* Center the search input in client.php */
+.search {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    text-align: center;
+}
+
+/* Add focus styling for better UX */
+.search:focus {
+    border-color: #FB0584;
+    box-shadow: 0 0 0 0.2rem rgba(251, 5, 132, 0.25);
+    outline: none;
+}
+
+/* Ensure the welcome section button is always pink */
+.welcome-text .btn.btn-pink {
+    background-color: #FB0584 !important;
+    color: white !important;
 }
 
 

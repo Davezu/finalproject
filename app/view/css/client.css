@@ -1,0 +1,260 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+    width: 100%;
+    background-color: white;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.logo {
+    margin-right: 40px;
+}
+
+.nav-links {
+    display: flex;
+    flex-grow: 1;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-links a:first-child {
+    color: #0d3880;
+    font-weight: 600;
+}
+
+.nav-links a:first-child::after {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #0d3880;
+}
+
+.username {
+    display: flex;
+    align-items: center;
+}
+
+.user-link {
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.user-profile {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.user-profile::after {
+    content: "▼";
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+.profile-link {
+    color: #0d3880;
+    font-weight: 500;
+}
+
+.banner {
+    background-color: #051A49;
+    padding: 30px;
+    width: 100%;
+}
+
+.search-container {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.search-row {
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+}
+
+.search-column {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+}
+
+.search-column:first-child {
+    flex: 1;
+}
+
+.search-column:nth-child(2) {
+    flex: 1;
+}
+
+.search-label {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+.search-where {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    margin-left: 140px;
+}
+
+.search-input {
+    width: 125%;
+    border-radius: 8px;
+    padding: 14px 15px;
+    border: none;
+    font-size: 16px;
+    height: 52px;
+}
+.where {
+    width:80%;
+    border-radius: 8px;
+    padding: 14px 15px;
+    border: none;
+    font-size: 16px;
+    height: 52px;
+    margin-left: 140px;
+}
+
+.seek-button {
+    background-color: #E60278;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0 35px;
+    height: 52px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.more-options {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 10px 30px 0;
+}
+
+.more-options a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.main-content{
+    width: 100%;
+    max-width: 500px;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+.job-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
+    margin-bottom: 20px;
+    position: relative;
+    max-width: 550px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.job-card h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+} 
+.new-badge {
+    display: inline-block;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.job-location {
+    color: #555;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.job-salary {
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+summary {
+    list-style: none;
+    cursor: pointer;
+    color: #0d3880;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 14px;
+    padding: 0;
+    border-top: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+summary::marker {
+    display: none;
+}
+details {
+    margin-bottom: 8px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+details p {
+    margin-top: 8px;
+    margin-left: 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    font-size: 14px;
+}

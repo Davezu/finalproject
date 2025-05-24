@@ -1,4 +1,4 @@
 <?php
-header("Location: app/view/index.php");
+header("Location: app/view/admin.php");
 exit;
 ?> 
