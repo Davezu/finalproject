@@ -59,10 +59,38 @@
             }
             .footer {
                 background-color: #051A49;
+                position: relative;
+                bottom: 0;
+                width: 100%;
+            }
+            
+            /* Fix for accordion and footer positioning */
+            html, body {
+                height: 100%;
+            }
+            
+            body {
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+            
+            main {
+                flex: 1 0 auto;
+            }
+            
+            .faq-container {
+                /* Fixed height approach - this won't change regardless of accordion state */
+                height: 800px; /* Set this to match your preferred page height */
+                overflow-y: auto; /* Allow scrolling within container if content exceeds height */
+            }
+            
+            footer {
+                flex-shrink: 0;
             }
         </style>
     </head>
-    <body class="d-flex flex-column h-100">
+    <body class="d-flex flex-column">
         <main class="flex-shrink-0">
             <!-- Navigation-->
             <nav class="nav-container">
@@ -74,7 +102,7 @@
             </div>
             <div class="nav-links">
                 <a href="">Job Search</a>
-                <a href="/">Home</a>
+                <a href="/user.php">Home</a>
                 <a href="about.php">About</a>
                 <a href="faq.php" class="active">FAQ</a>
                 <a href="contact.php">Contact</a>
@@ -82,7 +110,7 @@
             <div class="user">
                 <div class="username">
                     <a href="" class="user-link text-dark">Dave</a>
-                    <a href="/employer" class="user-link">Employer</a>
+                    <a href="/employer" class="user-link">Edit Content</a>
                     </div>
                 </div>
             </nav>
@@ -95,6 +123,7 @@
                     </div>
                     <div class="row gx-5">
                         <div class="col-xl-8">
+                            <div class="faq-container">
                             <!-- FAQ Accordion 1-->
                             <h2 class="fw-bolder mb-3">Account &amp; Billing</h2>
                             <div class="accordion mb-5" id="accordionExample">
@@ -165,6 +194,7 @@
                                             It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
                                             <code>.accordion-body</code>
                                             , though the transition does limit overflow.
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -196,7 +226,7 @@
             </section>
         </main>
         <!-- Footer-->
-        <footer class="footer py-4 mt-auto">
+        <footer class="footer py-4">
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                     <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Your Website 2023</div></div>

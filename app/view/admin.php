@@ -3,7 +3,6 @@ $pdo = require_once '../model/database.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['job_id']) && !empty($_POST['job_id'])) {
-        //updateCurrent info sa table
         $stmt = $pdo->prepare("UPDATE js_tbl SET `job_info` = :jobInfo, description = :description, location = :location, salary = :salary WHERE job_id = :jobId");
         
         $stmt->execute([
@@ -16,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: admin.php');
         exit;
     } else {
-        //create
         $stmt = $pdo->prepare("INSERT INTO js_tbl (`job_info`, description, location, salary) VALUES (:jobInfo, :description, :location, :salary)"); 
         $stmt->execute([
             ':jobInfo' => $_POST['job_info'],
@@ -29,7 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-//delet
 if (isset($_GET['delete']) && !empty($_GET['delete'])) {
     $stmt = $pdo->prepare("DELETE FROM js_tbl WHERE job_id = :jobId");
     $stmt->execute([':jobId' => $_GET['delete']
@@ -38,7 +35,6 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
     exit;
 }
 
-//editFunc
 $editJob = null;
 if (isset($_GET['edit']) && !empty($_GET['edit'])) {
     $stmt = $pdo->prepare("SELECT * FROM js_tbl WHERE job_id = :id");
@@ -48,7 +44,6 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
     $editJob = $stmt->fetch();
 }
 
-//getalljobs
 $jobs = [];
 $stmt = $pdo->query("SELECT * FROM js_tbl ORDER BY job_id DESC");
 if ($stmt->rowCount() > 0) {
@@ -63,6 +58,27 @@ if ($stmt->rowCount() > 0) {
     <title>Document</title>
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        .btn-pink {
+            background-color: #E60278;
+            color: white;
+        }
+        
+        .btn-pink:hover {
+            background-color: #c70067;
+            color: white;
+        }
+        
+        .btn-blue {
+            background-color: #051A49;
+            color: white;
+        }
+        
+        .btn-blue:hover {
+            background-color: #030f29;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <nav class="nav-container">
@@ -82,7 +98,7 @@ if ($stmt->rowCount() > 0) {
         <div class="user">
             <div class="username">
                 <a href="" class="user-link text-dark">Dave</a>
-                <a href="/employer" class="user-link">Employer</a>
+                <a href="/employer" class="user-link">Edit Content</a>
             </div>
         </div>
     </nav>
@@ -110,7 +126,10 @@ if ($stmt->rowCount() > 0) {
         </div>
         <div class="job-ads-header">
             <h2>My recent job ads</h2>
+            <div>
+                <a href="view_applicants.php" class="btn btn-blue me-2">View Applicants</a>
                 <button class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#exampleModal">Create Job</button>
+            </div>
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -181,6 +200,7 @@ if ($stmt->rowCount() > 0) {
                             <td><?php echo htmlspecialchars($job['salary']); ?></td>
                             <td>
                                 <a href="admin.php?edit=<?php echo $job['job_id']; ?>" class="btn btn-primary">Edit</a>
+                                <a href="view_applicants.php?job_id=<?php echo $job['job_id']; ?>" class="btn btn-info">Applicants</a>
                                 <a href="admin.php?delete=<?php echo $job['job_id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this job?')">Delete</a>
                             </td>
                         </tr>

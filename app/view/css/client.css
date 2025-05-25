@@ -74,7 +74,6 @@ body {
 }
 
 .user-profile::after {
-    content: "▼";
     font-size: 10px;
     margin-left: 5px;
 }
@@ -179,11 +178,11 @@ body {
     align-items: center;
 }
 
-.main-content{
+.main-content {
     width: 100%;
-    max-width: 500px;
-    margin-left: 100px;
-    margin-top: 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px;
 }
 
 .job-card {
@@ -193,8 +192,10 @@ body {
     box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
     margin-bottom: 20px;
     position: relative;
-    max-width: 550px;
+    height: 100%;
     border: 1px solid rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
 }
 
 .job-card h2 {
@@ -211,8 +212,8 @@ body {
     border-radius: 12px;
     font-size: 12px;
     margin-bottom: 12px;
+    width: 77px;
 }
-
 .job-location {
     color: #555;
     margin-bottom: 8px;
@@ -257,4 +258,43 @@ details p {
     background-color: #f9f9f9;
     border-radius: 5px;
     font-size: 14px;
+}
+.pagination {
+    margin-left: 46%;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content .logout {
+    color: #E60278;
+    font-weight: bold;
 }

@@ -70,8 +70,8 @@
             </a>
             </div>
             <div class="nav-links">
-                <a href="">Job Search</a>
-                <a href="/">Home</a>
+                <a href=">Job Search</a>
+                <a href="/user.php">Home</a>
                 <a href="/about.php">About</a>
                 <a href="/faq.php">FAQ</a>
                 <a href="/contact.php">Contact</a>
@@ -79,7 +79,7 @@
             <div class="user">
                 <div class="username">
                     <a href="" class="user-link text-dark">Dave</a>
-                    <a href="" class="user-link">Employer</a>
+                    <a href="" class="user-link">Edit Content</a>
                     </div>
                 </div>
             </nav>
